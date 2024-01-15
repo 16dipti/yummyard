@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
     <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
     <style>
@@ -13,6 +15,10 @@
     <style>
         html {
             scroll-behavior: smooth;
+        }
+
+        body{
+            overflow-x: hidden;
         }
     </style>
 </head>
@@ -149,7 +155,7 @@
     </script>
 
     <!-- hero section -->
-    <div class="relative bg-[url('/static/food.jpg')] bg-no-repeat w-full  h-full bg-cover ">
+    <div class="relative bg-[url('/static/food.jpg')] bg-no-repeat  max-w-full max-h-full bg-cover ">
 
         <div class="absolute bg-black opacity-[0.35] w-full h-full">
         </div>
@@ -339,11 +345,11 @@
 
 
     <!-- contact -->
-    <div id="contact" class="relative bg-[url('/static/reserv-bg.jpg')] w-full h-full bg-no-repeat bg-cover mt-[10rem]">
+    <div id="contact" class="relative bg-[url('/static/reserv-bg.jpg')] w-full h-full bg-no-repeat bg-cover">
         <div class="absolute bg-black opacity-[0.86] w-full h-full"></div>
 
-        <div class="relative flex flex-col gap-32 sm:flex-row w-full h-full justify-center items-center z-10">
-            <div class="w-[40rem]">
+        <div class="relative flex flex-col gap-32 w-full h-full justify-center items-center z-10">
+            <div class=" flex flex-col mt-20 justify-center items-center">
                 <h1 class=" text-[#ffb902] text-[60px] font-medium text-center sm:text-left mt-36 sm:mt-0"
                     style="font-family: 'Great Vibes', cursive;">Contact
                     Us
@@ -353,8 +359,8 @@
                     realtime ramatically actualize open-source metrics through fully tested vortals.</p>
             </div>
 
-            <div class="sm:mr-20 mx-auto">
-                <form class="grid grid-rows-1 gap-10 mt-[5rem]" action="/contact" method="POST">
+            <div class="mx-auto ml-3 mr-3">
+                <form class="grid grid-rows-1 gap-10 mt-[1rem]" action="/contact" method="POST">
                     <input
                         class="pr-10 pl-10 p-3 border-2 border-white text-[13px] rounded-lg bg-transparent text-white"
                         name="name" type="text" placeholder="Your name">
