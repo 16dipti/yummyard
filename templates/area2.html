@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YummyYard</title>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Martel+Sans:wght@600&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="relative bg-[url('/static/banner.jpg')] bg-no-repeat w-full  h-full bg-cover ">
+
+        <div class="absolute bg-black opacity-[0.35] w-full h-full">
+        </div>
+
+        <div class="relative flex flex-col justify-center items-center w-full h-full">
+
+            <p class="text-[#ffb902] text-[60px] text-center mt-[5rem]" style="font-family: 'Great Vibes', cursive;">
+                {{area}} Dishes</p>
+            <p class="text-white text-center sm:w-[50rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                voluptatibus similique dolores corrupti magnam deserunt nobis adipisci sit numquam atque, sed, animi
+                eum. Accusantium earum sapiente veniam impedit alias eum?</p>
+
+            <button onclick="goBack()"
+                class="bg-[#ffb902] text-[15px] font-bold text-black p-[0.70rem] pl-10 pr-10 rounded-3xl hover:bg-transparent border-2 border-[#ffb902] hover:border-[#ffb902] hover:text-white duration-300 mt-10 mb-[5rem]">Back
+                to Recipe</button>
+
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+        </div>
+
+    </div>
+
+    <!-- component -->
+    <div class="min-h-full bg-gray-100  grid md:grid-cols-3 grid-cols-1 sm:grid-cols-2 items-start ">
+        {% for meal in dish %}
+
+        <div
+            class="flex flex-col justify-center items-center bg-white hover:bg-[#ffb902] 
+        w-[20rem] mt-10 mx-auto p-9 max-w-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300">
+            <div>
+                <img class="w-[10rem]" src="{{meal['strMealThumb']}}" alt="">
+            </div>
+            <div>
+                <h1>{{meal['strMeal']}}</h1>
+            </div>
+            <div>
+                <a href="/dish/{{meal['idMeal']}}">
+                    <button
+                        class="text-white mt-5 text-md font-semibold bg-black py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 ">Read
+                        Reciepe</button></a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>

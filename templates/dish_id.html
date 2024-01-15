@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YummyYard</title>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Martel+Sans:wght@600&display=swap');
+    </style>
+</head>
+
+<body>
+    {% for dishes in dish %}
+    {% set instructions_sentences = dishes['strInstructions'].split('.') %}
+    <div class="relative bg-[url('/static/banner.jpg')] bg-no-repeat w-full  h-full bg-cover ">
+
+        <div class="absolute bg-black opacity-[0.35] w-full h-full">
+        </div>
+
+        <div class="relative flex flex-col justify-center items-center w-full h-full">
+            <p class="text-[#ffb902] text-[60px] text-center mt-[5rem]" style="font-family: 'Great Vibes', cursive;">
+                {{dishes['strMeal']}}</p>
+            <p class="text-white text-center sm:w-[50rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                voluptatibus similique dolores corrupti magnam deserunt nobis adipisci sit numquam atque, sed, animi
+                eum. Accusantium earum sapiente veniam impedit alias eum?</p>
+
+            <button onclick="goBack()"
+                class="bg-[#ffb902] text-[15px] font-bold text-black p-[0.70rem] pl-10 pr-10 rounded-3xl hover:bg-transparent border-2 border-[#ffb902] hover:border-[#ffb902] hover:text-white duration-300 mt-10 mb-[5rem]">Back
+                to Recipe</button>
+
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+        </div>
+
+    </div>
+
+    <!-- ingredients -->
+
+    <div class="flex md:flex-row flex-col gap-8 justify-between items-start sm:ml-28 mt-20 sm:mr-28 ml-10 mr-10">
+        <div class="flex flex-col justify-center items-start">
+            <h1 class="sm:text-[50px] text-[40px] text-[#ffb902] font-semibold"
+                style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Ingredients
+            </h1>
+            {% for meal in ingredients %}
+            <li>{{meal}}</li>
+            {% endfor %}
+
+        </div>
+        <div>
+            <img class="w-[25rem]" src="{{dishes['strMealThumb']}}" alt="">
+        </div>
+    </div>
+
+    <!-- preparation -->
+    <div class="flex flex-col justify-center items-start sm:ml-28 mt-20 sm:mr-28 mb-20 ml-10 mr-10">
+        <h1 class="sm:text-[50px] text-[40px] text-[#ffb902] font-semibold"
+            style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Preparation
+        </h1>
+        {% for sentence in instructions_sentences %}
+        {% if sentence %}
+        <li class="text-justify text-[18px] font-medium text-black" style="font-family: 'sans-serif';">
+            {{sentence}}
+        </li>
+        {% endif %}
+        {% endfor %}
+
+
+
+    </div>
+
+    <!-- video -->
+    <div class="flex flex-col justify-center items-start sm:ml-28 mt-20 sm:mr-28 mb-20 ml-10 mr-10">
+        <h1 class="sm:text-[50px] text-[40px] text-[#ffb902] font-semibold"
+            style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Recipe Video
+        </h1>
+        <a href="{{dishes['strYoutube']}} " target="_blank">{{dishes['strYoutube']}}</a>
+    </div>
+
+    {% endfor %}
+
+
+</body>
+
+</html>
