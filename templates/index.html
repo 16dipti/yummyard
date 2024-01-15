@@ -299,12 +299,12 @@
                 </button>
 
                 <!-- Dropdown menu -->
-                <div id="dropdownUsers" class="z-10 hidden  rounded-lg shadow w-60 dark:bg-white">
+                <div id="dropdownUsers" class="z-10 hidden  rounded-lg shadow w-60 bg-white">
                     <ul class="h-48 py-2 overflow-y-auto  text-black" aria-labelledby="dropdownUsersButton">
                         {% for meal in meals %}
                         <li>
                             <a href="/area/{{meal['strArea']}}"
-                                class="flex items-center px-4 py-2 hover:bg-[#ffb902]  dark:hover:text-white">
+                                class="flex items-center px-4 py-2 hover:bg-[#ffb902]  hover:text-white">
 
                                 {{meal['strArea']}}
                             </a>
