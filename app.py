@@ -42,7 +42,7 @@ def contact():
         db.session.add(post)
         db.session.commit()
     
-    return render_template('index.html')
+        return render_template('index.html')
 
 
 # category
