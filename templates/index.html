@@ -175,8 +175,8 @@
                 <div
                     class=" flex justify-center items-center gap-3 border-2 border-gray-400 pl-2 pr-4 rounded-xl mb-[10rem] mt-10  active:bg-transparent" >
 
-                    <input class="pr-8 pl-8 p-3 outline-none text-[13px] bg-transparent text-white active:bg-transparent focus-within:bg-transparent focus:bg-transparent visited:bg-transparent focus-visible:bg-transparent" name="dish_name" type="text"
-                        placeholder="Search Reciepe By ingredient">
+                    <input class="pr-10 pl-10 p-4 outline-none text-[13px] bg-transparent text-white active:bg-transparent focus-within:bg-transparent focus:bg-transparent visited:bg-transparent focus-visible:bg-transparent" name="dish_name" type="text"
+                        placeholder="Search Reciepe">
 
                     <button type="submit">
                         <img class="text-white" src="/static/search.png" alt=""></button>
@@ -299,7 +299,7 @@
                 </button>
 
                 <!-- Dropdown menu -->
-                <div id="dropdownUsers" class="z-10 hidden  rounded-lg shadow w-60 bg-white">
+                <div id="dropdownUsers" class="z-10 absolute hidden abs  rounded-lg shadow w-60 bg-white">
                     <ul class="h-48 py-2 overflow-y-auto  text-black" aria-labelledby="dropdownUsersButton">
                         {% for meal in meals %}
                         <li>
@@ -308,7 +308,7 @@
 
                                 {{meal['strArea']}}
                             </a>
-                        </li>
+                        </li> 
                         {% endfor %}
 
                     </ul>
