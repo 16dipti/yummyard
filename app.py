@@ -4,7 +4,9 @@ from db import db
 import requests
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/food"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/food"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost:3306/food"
+
 db.init_app(app)
 
 @app.route("/")
