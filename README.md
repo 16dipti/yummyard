@@ -11,7 +11,7 @@ Welcome to the Recipe Website project! This web application, built using Flask, 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/16dipti/recipe-website.git
+   git clone https://github.com/16dipti/yummyard.git
    ```
 
 3. Install the required dependencies:
