@@ -55,7 +55,11 @@ def contact():
         db.session.add(get_message)
         db.session.commit()
 
-        return render_template('index.html')
+        return render_template('index.html', send=True)
+    
+    return render_template('index.html', send=False)
+    
+    
 
 
 # category

@@ -17,7 +17,7 @@
             scroll-behavior: smooth;
         }
 
-        body{
+        body {
             overflow-x: hidden;
         }
     </style>
@@ -173,10 +173,11 @@
                 eum. Accusantium earum sapiente veniam impedit alias eum?</p>
             <form action="/search" method="POST">
                 <div
-                    class=" flex justify-center items-center gap-3 border-2 border-gray-400 pl-2 pr-4 rounded-xl mb-[10rem] mt-10  active:bg-transparent" >
+                    class=" flex justify-center items-center gap-3 border-2 border-gray-400 pl-2 pr-4 rounded-xl mb-[10rem] mt-10  active:bg-transparent">
 
-                    <input class="pr-10 pl-10 p-4 outline-none text-[13px] bg-transparent text-white active:bg-transparent focus-within:bg-transparent focus:bg-transparent visited:bg-transparent focus-visible:bg-transparent" name="dish_name" type="text"
-                        placeholder="Search Reciepe">
+                    <input
+                        class="pr-10 pl-10 p-4 outline-none text-[13px] bg-transparent text-white active:bg-transparent focus-within:bg-transparent focus:bg-transparent visited:bg-transparent focus-visible:bg-transparent"
+                        name="dish_name" type="text" placeholder="Search Reciepe">
 
                     <button type="submit">
                         <img class="text-white" src="/static/search.png" alt=""></button>
@@ -308,7 +309,7 @@
 
                                 {{meal['strArea']}}
                             </a>
-                        </li> 
+                        </li>
                         {% endfor %}
 
                     </ul>
@@ -348,6 +349,16 @@
     <div id="contact" class="relative bg-[url('/static/reserv-bg.jpg')] w-full h-full bg-no-repeat bg-cover">
         <div class="absolute bg-black opacity-[0.86] w-full h-full"></div>
 
+
+        {% if send %}
+            <script>
+                alert("Message sent successfully")
+            </script>
+        {% endif %}
+
+
+
+
         <div class="relative flex flex-col gap-32 w-full h-full justify-center items-center z-10">
             <div class=" flex flex-col mt-20 justify-center items-center">
                 <h1 class=" text-[#ffb902] text-[60px] font-medium text-center sm:text-left mt-36 sm:mt-0"
@@ -378,7 +389,7 @@
 
                     <div class="relative z-10 w-full flex justify-center items-center">
                         <button type="submit"
-                            class="bg-[#ffb902]  text-[15px] font-bold text-black p-[0.70rem] pl-10 pr-10 rounded-3xl hover:bg-transparent border-2 border-[#ffb902] hover:border-[#ffb902] hover:text-white duration-300 mt-10 mb-10">Contact
+                            class="bg-[#ffb902]  text-[15px] font-bold text-black p-[0.70rem] pl-10 pr-10 rounded-3xl hover:bg-transparent border-2 border-[#ffb902] hover:border-[#ffb902] hover:text-white duration-300 mt-10 mb-10"> Contact
                             Us</button>
                     </div>
                 </form>
@@ -389,10 +400,11 @@
 
 
 
-
         </div>
 
     </div>
+
+
 
 
 </body>
