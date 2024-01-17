@@ -1,12 +1,8 @@
 from flask import Flask, render_template, request, abort, redirect, url_for
-from model.food import Contact
-from db import db
 import requests
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost:3306/food"
 
-db.init_app(app)
 
 @app.route("/")
 def home():
@@ -28,20 +24,7 @@ def home():
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
     if (request.method) == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-        mobile = request.form.get('phn')
-        msg = request.form.get('msg')
-
-        post = Contact(
-            name=name,
-            email=email,
-            mobile=mobile,
-            message=msg
-        )
-
-        db.session.add(post)
-        db.session.commit()
+        pass
     
         return render_template('index.html')
 
@@ -106,8 +89,8 @@ def search():
     
 
 
-    
-
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
 
