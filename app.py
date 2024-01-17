@@ -33,6 +33,7 @@ def home():
     meals = request.json()['meals']
 
 
+
     return render_template('index.html', recipes=recipes, meals=meals)
 
 
@@ -55,9 +56,9 @@ def contact():
         db.session.add(get_message)
         db.session.commit()
 
-        return render_template('index.html', send=True)
+        return render_template('contact.html', send=True)
     
-    return render_template('index.html', send=False)
+    return render_template('contact.html', send=False)
     
     
 

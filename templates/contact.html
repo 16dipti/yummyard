@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YummyYard</title>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Martel+Sans:wght@600&display=swap');
+    </style>
+</head>
+
+<body>
+    <!-- contact -->
+    <div id="contact" class="relative bg-[url('/static/reserv-bg.jpg')] w-full h-full bg-no-repeat bg-cover">
+        <div class="absolute bg-black opacity-[0.86] w-full h-full"></div>
+
+
+
+
+
+
+
+        <div class="relative flex flex-col gap-[3rem] w-full h-full justify-center items-center z-10">
+            <div class=" flex flex-col mt-20 mb-10 justify-center items-center">
+                <h1 class=" text-[#ffb902] text-[60px] font-medium text-center mt-20 sm:mt-0"
+                    style="font-family: 'Great Vibes', cursive;">Contact
+                    Us
+                </h1>
+                <p class="text-white sm:w-[40rem] text-center  ">Rapidiously plagiarize scalable
+                    manufactured products for
+                    realtime ramatically actualize open-source metrics through fully tested vortals.</p>
+            </div>
+
+            <div class="mx-auto ml-3 mr-3">
+                <form class="grid grid-rows-1 gap-10 mt-[1rem]" action="/contact" method="POST">
+                    <input required
+                        class="pr-10 pl-10 p-3 border-2 border-white text-[13px] rounded-lg bg-transparent text-white"
+                        name="name" type="text" placeholder="Your name">
+                    <input required
+                        class="pr-10 pl-10 p-3 border-2 border-white text-[13px] rounded-lg bg-transparent text-white"
+                        name="email" type="text" placeholder="Your email">
+                    <input required
+                        class="pr-10 pl-10 p-3 border-2 border-white text-[13px] rounded-lg bg-transparent text-white"
+                        name="phn" type="text" placeholder="Mobile Number">
+
+
+
+                    <textarea required class="pr-10 pl-10 p-3 text-white bg-transparent border-2 border-white rounded-lg"
+                        id="msg" name="msg" rows="4" cols="50" placeholder="Message"></textarea>
+
+                    {% if send %}
+                    <script>
+                        alert("Message sent successfully")
+                    </script>
+                    {% endif %}
+
+                    <div class="relative z-10 w-full flex justify-center items-center">
+                        <button type="submit"
+                            class="bg-[#ffb902]  text-[15px] font-bold text-black p-[0.70rem] pl-10 pr-10 rounded-3xl hover:bg-transparent border-2 border-[#ffb902] hover:border-[#ffb902] hover:text-white duration-300 mt-10 mb-10">
+                            Contact
+                            Us</button>
+
+
+
+
+
+                    </div>
+                </form>
+
+            </div>
+
+
+
+            <div class="mb-16">
+                <a href="/">
+                <button
+                    class="bg-[#ffb902]  text-[15px] font-bold text-black p-[0.70rem] pl-10 pr-10 rounded-3xl hover:bg-transparent border-2 border-[#ffb902] hover:border-[#ffb902] hover:text-white duration-300 ">
+                    Back to homepage</button></a>
+                </script>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
