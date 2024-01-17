@@ -52,7 +52,7 @@ def contact():
 
         db.session.add(get_message)
         db.session.commit()
-    
+        
         return render_template('index.html')
 
 
