@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, abort, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import requests
+import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///contact.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+# postgres://mysql_7lpf_user:99wXAZtOIYBa7QWAe3NDp24XDKEB6rCL@dpg-cmjle9un7f5s73cchoh0-a.singapore-postgres.render.com/mysql_7lpf
 
 class Contact(db.Model):
     sno = db.Column(db.Integer, primary_key = True)
@@ -52,7 +54,7 @@ def contact():
 
         db.session.add(get_message)
         db.session.commit()
-        
+
         return render_template('index.html')
 
 

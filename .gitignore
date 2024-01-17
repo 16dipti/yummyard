@@ -1,3 +1,3 @@
-__instance__/
 .venv/
-__pycache__
+instance/
+__pyache__/
